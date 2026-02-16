@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事業内容 | 株式会社NVS</title>
+    <style>
+        /* --- 基本設定 --- */
+        body { font-family: "Helvetica Neue", Arial, sans-serif; margin: 0; padding-top: 100px; background-color: #f8f9fa; color: #333; line-height: 1.8; }
+        
+        header {
+            background: #1a1a1a; color: white; position: fixed;
+            top: 0; width: 100%; height: 70px; z-index: 1000;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .logo a { font-size: 1.3rem; font-weight: bold; letter-spacing: 2px; color: white; text-decoration: none; }
+
+        /* --- メインコンテンツ --- */
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        
+        .page-title { text-align: center; margin-bottom: 80px; }
+        .page-title h2 { font-size: 2.5rem; letter-spacing: 5px; margin-bottom: 15px; font-weight: bold; }
+        .page-title .line { width: 40px; height: 4px; background: #ff8c00; margin: 0 auto; }
+
+        /* --- 事業セクション --- */
+        .service-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px;
+            position: relative;
+            transition: 0.4s;
+            border: 1px solid #eee;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            border-bottom: 1px solid #ff8c00;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .service-item-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-item-list li {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 8px;
+            padding-left: 0;
+        }
+
+        /* スマホ対応 */
+        @media (max-width: 768px) {
+            .service-group { grid-template-columns: 1fr; }
+            .page-title { margin-bottom: 40px; }
+            .service-card { padding: 30px; }
+        }
+
+        /* 戻るリンク */
+        .footer-nav { text-align: center; margin: 60px 0; }
+        .btn-home { text-decoration: none; color: #888; font-size: 0.9rem; transition: 0.3s; }
+        .btn-home:hover { color: #ff8c00; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="../">株式会社NVS</a></div>
+    </header>
+
+    <main class="container">
+        <div class="page-title">
+            <h2>SERVICES</h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="service-group">
+            <section class="service-card">
+                <h3>運送業</h3>
+                <ul class="service-item-list">
+                    <li>一般貨物自動車運送業</li>
+                    <li>法人・個人 引っ越し事業</li>
+                    <li>産業廃棄物収集運搬</li>
+                </ul>
+            </section>
+
+            <section class="service-card">
+                <h3>建設業</h3>
+                <ul class="service-item-list">
+                    <li>エアコン・家電設置</li>
+                    <li>ハウスクリーニング・エアコンクリーニング</li>
+                    <li>足場 リース販売及び施工</li>
+                    <li>仮囲い リース販売及び施工</li>
+                </ul>
+            </section>
+
+            <section class="service-card">
+                <h3>アートバルーン事業</h3>
+                <ul class="service-item-list">
+                    <li>イベント会場・飲食店 装飾</li>
+                    <li>商業施設・結婚式業 装飾</li>
+                </ul>
+            </section>
+
+            <section class="service-card">
+                <h3>自動車販売業</h3>
+                <ul class="service-item-list">
+                    <li>各種新車・中古車販売</li>
+                    <li>車検・点検・鈑金塗装</li>
+                    <li>一般整備・修理</li>
+                    <li>チューニング</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="footer-nav">
+            <a href="../" class="btn-home">← ホームへ戻る</a>
+        </div>
+    </main>
+
+</body>
+</html>

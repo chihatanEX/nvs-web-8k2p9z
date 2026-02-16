@@ -3,159 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>株式会社NVS | エアコンのプロ</title>
+    <title>株式会社NVS | 運送・建設・自動車・バルーン装飾</title>
     <style>
         /* --- 基本設定 --- */
         html { scroll-behavior: smooth; }
-        body { font-family: sans-serif; margin: 0; padding-top: 70px; background-color: #f9f9f9; color: #333; }
+        body { font-family: "Helvetica Neue", Arial, sans-serif; margin: 0; padding-top: 70px; background-color: #f4f4f4; color: #333; }
 
-        /* --- ヘッダー（ロゴを中央、アイコンを右に固定） --- */
+        /* --- ヘッダー --- */
         header {
-            background: #2c2c2c;
-            color: white;
-            position: fixed;
-            top: 0; width: 100%; height: 70px;
-            z-index: 1000;
-            display: flex; align-items: center; justify-content: center; /* ロゴを真ん中に */
+            background: #1a1a1a; color: white; position: fixed;
+            top: 0; width: 100%; height: 70px; z-index: 1000;
+            display: flex; align-items: center; justify-content: center;
         }
-        .logo { font-size: 1.3rem; font-weight: bold; letter-spacing: 2px; }
+        .logo { font-size: 1.4rem; font-weight: bold; letter-spacing: 3px; }
 
-        /* --- ハンバーガーメニューの仕組み --- */
+        /* --- ハンバーガーメニュー --- */
         #menu-check { display: none; }
-        
-        /* メニューアイコンを確実に右側に配置し、クリック可能にする */
-        .menu-icon { 
-            position: absolute; 
-            right: 20px; 
-            top: 50%;
-            transform: translateY(-50%);
-            width: 40px; 
-            height: 40px; 
-            cursor: pointer; 
-            z-index: 1200; /* 最前面に */
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-        }
-        .menu-icon span { display: block; width: 25px; height: 3px; background-color: white; margin: 3px 0; transition: 0.3s; }
-
-        /* メニュー本体 */
+        .menu-icon { position: absolute; right: 20px; cursor: pointer; z-index: 1200; width: 30px; }
+        .menu-icon span { display: block; width: 100%; height: 3px; background: white; margin: 6px 0; transition: 0.3s; }
         .nav-menu {
             position: fixed; top: 0; right: -100%;
-            width: 250px; height: 100vh;
-            background: #2c2c2c; padding-top: 80px;
-            list-style: none; margin: 0; transition: 0.5s;
-            z-index: 1100;
+            width: 280px; height: 100vh; background: #1a1a1a; padding-top: 80px;
+            list-style: none; margin: 0; transition: 0.5s; z-index: 1100;
         }
-        .nav-menu li a {
-            display: block;
-            padding: 20px;
-            color: white;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
-        }
-
-        /* 【追加】メニューホバー時の色変化 */
-        .nav-menu li a:hover {
-            background-color: #ff8c00; 
-            color: #fff;
-            padding-left: 30px;
-        }
-
-        /* チェックが入ったらメニューを出す */
+        .nav-menu li a { display: block; padding: 20px 30px; color: white; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+        .nav-menu li a:hover { background: #ff8c00; padding-left: 40px; }
         #menu-check:checked ~ .nav-menu { right: 0; }
-        #menu-check:checked ~ .menu-icon span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
-        #menu-check:checked ~ .menu-icon span:nth-child(2) { opacity: 0; }
-        #menu-check:checked ~ .menu-icon span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-        /* --- コンテンツエリア（カードなど） --- */
-        .container { max-width: 1000px; margin: auto; padding: 60px 20px; }
-        .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 80px; }
-        @media (max-width: 768px) { .card-grid { grid-template-columns: 1fr; } }
-
-        .nav-card {
-            position: relative; display: block; padding: 50px 20px;
-            text-align: center; background: #fff; color: #333;
-            text-decoration: none; border: 1px solid #ddd;
-            transition: all 0.4s ease; overflow: hidden; filter: grayscale(100%);
+        /* --- メインビジュアル --- */
+        .hero {
+            position: relative; width: 100%; height: 500px;
+            background: url('Untitled.jpg') no-repeat center center / cover;
+            display: flex; align-items: center; justify-content: center; color: white; text-align: center;
         }
-        .nav-card::after {
-            content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 4px;
-            background: #000; transform: scaleX(0); transform-origin: center; transition: transform 0.4s ease;
-        }
-        .nav-card:hover { background: #333; color: #fff; filter: grayscale(0%); transform: translateY(-5px); }
-        .nav-card:hover::after { transform: scaleX(1); }
-        .nav-card .icon { font-size: 0.8rem; letter-spacing: 2px; color: #888; transition: 0.4s; }
-        .nav-card h3 { margin: 15px 0; font-size: 1.5rem; }
-
-        .hero { position: relative; width: 100%; height: 500px; background: url('Untitled.jpg') no-repeat center center / cover; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
         .hero::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); }
-        .hero-content { position: relative; z-index: 1; }
-        .btn-main { background: #ff8c00; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .hero-content { position: relative; z-index: 1; padding: 0 20px; }
+        .hero-content h2 { font-size: 2.5rem; font-weight: bold; margin: 0; line-height: 1.4; }
 
-        .content-box { padding: 100px 0 40px; border-bottom: 1px solid #eee; }
-        .line { width: 50px; height: 3px; background: #333; margin-bottom: 30px; }
-        ul { list-style: square; padding-left: 20px; line-height: 2; }
+        /* --- 画像の下に沿って端まで表示する枠 --- */
+        .hero-tag-full {
+            width: 100%;
+            background: #fff;
+            border-bottom: 5px solid #ff8c00;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .hero-tag-box {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 25px 0;
+        }
+        .hero-tag-box div {
+            flex: 1;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            color: #1a1a1a;
+        }
+        .hero-tag-box div:not(:last-child) {
+            border-right: 1px solid #ddd;
+        }
+
+        /* --- 事業理念 (PHILOSOPHY) --- */
+        .philosophy { background: #f4f4f4; padding: 100px 20px 60px; text-align: center; }
+        .philosophy-inner { max-width: 800px; margin: 0 auto; }
+        .philosophy span { color: #ff8c00; font-weight: bold; letter-spacing: 2px; font-size: 0.9rem; }
+        .philosophy h2 { font-size: 2rem; margin: 25px 0; letter-spacing: 2px; line-height: 1.5; }
+        .philosophy p { line-height: 2.2; color: #666; font-size: 1rem; text-align: left; }
+
+        /* --- コンテンツエリア共通 --- */
+        .container { max-width: 900px; margin: auto; padding: 60px 20px; }
+        .section-title { text-align: center; margin-bottom: 30px; }
+        .section-title h2 { font-size: 1.8rem; letter-spacing: 4px; margin: 0; font-weight: bold; }
+        .section-title .line { width: 40px; height: 4px; background: #ff8c00; margin: 15px auto; }
+
+        /* 実績 (WORKS) */
+        .works-list { background: white; padding: 20px; margin-bottom: 50px; border: 1px solid #eee; }
+        .works-item { display: flex; border-bottom: 1px solid #eee; padding: 18px 0; font-size: 0.95rem; }
+        .works-item:last-child { border-bottom: none; }
+        .works-date { width: 110px; color: #888; }
+        .works-text { flex: 1; font-weight: 500; }
+
+        /* ボタン */
+        .nav-card {
+            position: relative; display: block; padding: 40px 20px;
+            text-align: center; background: #fff; color: #1a1a1a;
+            text-decoration: none; transition: 0.4s ease; overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee;
+            max-width: 500px; margin: 0 auto 80px;
+        }
+        .nav-card::after { content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 6px; background: #000; transform: scaleX(0); transition: 0.4s ease; }
+        .nav-card:hover { background: #1a1a1a; color: #fff; transform: translateY(-5px); }
+        .nav-card:hover::after { transform: scaleX(1); }
+        .nav-card h3 { margin: 0; font-size: 1.4rem; letter-spacing: 2px; }
+
+        /* 会社概要 (COMPANY) */
+        .company-table { width: 100%; border-collapse: collapse; background: white; border: 1px solid #eee; margin-bottom: 80px; }
+        .company-table th, .company-table td { padding: 20px; border-bottom: 1px solid #eee; text-align: left; }
+        .company-table th { background: #fafafa; width: 30%; color: #666; font-size: 0.9rem; font-weight: bold; }
+
+        footer { background: #1a1a1a; color: #888; text-align: center; padding: 40px 20px; font-size: 0.8rem; }
+
+        /* スマホ対応 */
+        @media (max-width: 768px) {
+            .hero-content h2 { font-size: 1.8rem; }
+            .hero-tag-box { flex-direction: column; padding: 10px 0; }
+            .hero-tag-box div { border-right: none !important; border-bottom: 1px solid #eee; padding: 15px 0; width: 100%; }
+            .hero-tag-box div:last-child { border-bottom: none; }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">株式会社NVS</div>
+    <div class="logo">
+        <span class="co-text">株式会社</span><span class="nvs-text">NVS</span>
+    </div>
     <input type="checkbox" id="menu-check">
-    <label for="menu-check" class="menu-icon">
-        <span></span><span></span><span></span>
-    </label>
+    <label for="menu-check" class="menu-icon"><span></span><span></span><span></span></label>
     <ul class="nav-menu">
         <li><a href="index.html">ホーム</a></li>
-        <li><a href="service/">サービス内容</a></li>
-        <li><a href="price/">料金表</a></li>
-        <li><a href="recruit/index.html/">採用情報</a></li>
+        <li><a href="service/">事業内容</a></li>
+        <li><a href="price/">料金案内</a></li>
+        <li><a href="recruit/">採用情報</a></li>
         <li><a href="contact/">お問い合わせ</a></li>
     </ul>
 </header>
 
 <section class="hero">
     <div class="hero-content">
-        <h2>エアコンのプロが解決します</h2>
-        <p>最短即日対応</p>
-        <br>
-        <a href="contact/" class="btn-main">無料で見積もりを依頼する</a>
+        <h2>運ぶ、創る、彩る。<br>そのすべてに、プロの誇りと情熱を。</h2>
+    </div>
+</section>
+
+<div class="hero-tag-full">
+    <div class="hero-tag-box">
+        <div>運送事業</div>
+        <div>建設事業</div>
+        <div>アートバルーン事業</div>
+        <div>自動車事業</div>
+    </div>
+</div>
+
+<section class="philosophy">
+    <div class="philosophy-inner">
+        <span>PHILOSOPHY</span>
+        <h2>運ぶ、創る、彩る。<br>現場から、日常を支え、未来を照らす。</h2>
+        <p>
+            株式会社NVSは、運送・建設・自動車・バルーン装飾という多角的なサービスを展開しています。一見異なるこれらの事業を繋いでいるのは、「お客様の困ったを解決し、期待を超える価値を届けたい」という一貫した想いです。現場の安全を支え、物流を動かし、時には華やかな演出で笑顔を届ける。私たちは、社会のインフラと人々の暮らしの両面をサポートし続けます。
+        </p>
     </div>
 </section>
 
 <main class="container">
-    <div class="card-grid">
-        <a href="#business" class="nav-card">
-            <span class="icon">SERVICES</span>
-            <h3>事業内容</h3>
-            <p>詳しく見る</p>
-        </a>
-        <a href="#projects" class="nav-card">
-            <span class="icon">PROJECTS</span>
-            <h3>工事実績</h3>
-            <p>詳しく見る</p>
-        </a>
+    <div class="section-title"><h2>SERVICE</h2><div class="line"></div></div>
+    <a href="service/" class="nav-card"><h3>事業内容を詳しく見る</h3></a>
+
+    <div class="section-title"><h2>WORKS</h2><div class="line"></div></div>
+    <div class="works-list">
+        <div class="works-item"><span class="works-date">2026.</span><span class="works-text">**** **** ****</span></div>
+        <div class="works-item"><span class="works-date">2026.</span><span class="works-text">**** **** ****</span></div>
+        <div class="works-item"><span class="works-date">2026.</span><span class="works-text">**** **** ****</span></div>
     </div>
 
-    <div id="business" class="content-box">
-        <h2>事業内容</h2>
-        <div class="line"></div>
-        <ul>
-            <li>業務用エアコン設置・修理</li>
-            <li>家庭用ルームエアコン工事</li>
-            <li>空調設備メンテナンス・洗浄</li>
-        </ul>
-    </div>
+    <div class="section-title"><h2>RECRUIT</h2><div class="line"></div></div>
+    <a href="recruit/" class="nav-card"><h3>採用情報はこちら</h3></a>
 
-    <div id="projects" class="content-box">
-        <h2>工事実績</h2>
-        <div class="line"></div>
-        <p>（ここに実績の内容が入ります）</p>
-    </div>
+    <div class="section-title"><h2>COMPANY</h2><div class="line"></div></div>
+    <table class="company-table">
+        <tr><th>会社名</th><td>株式会社NVS</td></tr>
+        <tr><th>代表者</th><td></td></tr>
+        <tr><th>法人番号</th><td>2040001135153</td></tr>
+        <tr><th>所在地</th><td>千葉県千葉市若葉区桜木北2-26-43</td></tr>
+        <tr><th>事業内容</th><td>運送業 / 建設業 / 自動車販売業 / アートバルーン事業</td></tr>
+    </table>
 </main>
+
+<footer><p>&copy; 2026 株式会社NVS. All Rights Reserved.</p></footer>
 
 </body>
 </html>
