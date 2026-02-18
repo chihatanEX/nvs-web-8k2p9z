@@ -12,7 +12,7 @@
             background: #1a1a1a; color: white; position: fixed;
             top: 0; width: 100%; height: 70px; z-index: 1000;
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 2px 0 0 #fff, 0 6px 0 0 #ff8c00; /* オレンジ線維持 */
+            box-shadow: 0 2px 0 0 #fff, 0 6px 0 0 #ff8c00;
         }
         
         .logo { display: flex; align-items: baseline; letter-spacing: 3px; color: white; text-decoration: none; }
@@ -22,19 +22,25 @@
         #menu-check { display: none; }
         .menu-icon { position: absolute; right: 20px; cursor: pointer; z-index: 1200; width: 30px; }
         .menu-icon span { display: block; width: 100%; height: 3px; background: white; margin: 6px 0; transition: 0.3s; }
+        
         .nav-menu {
             position: fixed; top: 0; right: -100%;
             width: 280px; height: 100vh; background: #1a1a1a; padding-top: 80px;
             list-style: none; margin: 0; transition: 0.5s; z-index: 1100;
         }
         .nav-menu li a { display: block; padding: 20px 30px; color: white; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+        
+        /* メニューホバー時のオレンジ色を復活 */
+        .nav-menu li a:hover { background: #ff8c00; padding-left: 40px; }
+        
         #menu-check:checked ~ .nav-menu { right: 0; }
 
         .container { max-width: 900px; margin: auto; padding: 60px 20px; }
         
-        .page-title { text-align: center; margin-bottom: 40px; }
-        .page-title h2 { font-size: 1.8rem; letter-spacing: 4px; margin-bottom: 15px; font-weight: bold; }
-        .page-title .line { width: 40px; height: 4px; background: #ff8c00; margin: 0 auto; }
+        /* 採用情報ページと統一したタイトルスタイル */
+        .page-title { text-align: center; margin-bottom: 60px; }
+        .page-title h2 { font-size: 2.5rem; letter-spacing: 4px; margin-bottom: 10px; font-weight: bold; }
+        .page-title .line { width: 60px; height: 4px; background: #ff8c00; margin: 0 auto; }
 
         .form-outer {
             width: 100%;
@@ -82,23 +88,22 @@
 <main class="container">
     <div class="page-title">
         <h2>CONTACT</h2>
-
-        <div style="background: #fff; border: 1px solid #ff8c00; padding: 25px; margin-bottom: 30px; border-radius: 8px; text-align: center;">
-            <h3 style="margin-top: 0; color: #1a1a1a; font-size: 1.1rem;">お問い合わせ窓口</h3>
-            <div style="display: inline-block; text-align: left;">
-                <p style="margin: 10px 0; font-size: 0.95rem; line-height: 1.8;">
-                    <strong style="display: inline-block; width: 4.5em;">TEL</strong>: <a href="tel:043-331-2339" style="color: #333; text-decoration: none;">043-331-2339</a><br>
-                    <strong style="display: inline-block; width: 4.5em;">Mobile</strong>: <a href="tel:080-1729-1068" style="color: #ff8c00; text-decoration: none; font-weight: bold;">080-1729-1068</a>（担当直通）<br>
-                    <strong style="display: inline-block; width: 4.5em;">FAX</strong>: 043-331-2345<br>
-                    <strong style="display: inline-block; width: 4.5em;">Email</strong>: info@navies-group.com
-                </p>
-            </div>
-            <p style="font-size: 0.85rem; color: #666; margin-top: 10px; margin-bottom: 0;">
-                本社：〒264-0029 千葉県千葉市若葉区桜木北2-26-43
-            </p>
-        </div> 
-
         <div class="line"></div>
+    </div>
+
+    <div style="background: #fff; border: 1px solid #ff8c00; padding: 25px; margin-bottom: 40px; border-radius: 8px; text-align: center;">
+        <h3 style="margin-top: 0; color: #1a1a1a; font-size: 1.1rem;">お問い合わせ窓口</h3>
+        <div style="display: inline-block; text-align: left;">
+            <p style="margin: 10px 0; font-size: 0.95rem; line-height: 1.8;">
+                <strong style="display: inline-block; width: 4.5em;">TEL</strong>: <a href="tel:043-331-2339" style="color: #333; text-decoration: none;">043-331-2339</a><br>
+                <strong style="display: inline-block; width: 4.5em;">Mobile</strong>: <a href="tel:080-1729-1068" style="color: #ff8c00; text-decoration: none; font-weight: bold;">080-1729-1068</a>（担当直通）<br>
+                <strong style="display: inline-block; width: 4.5em;">FAX</strong>: 043-331-2345<br>
+                <strong style="display: inline-block; width: 4.5em;">Email</strong>: info@navies-group.com
+            </p>
+        </div>
+        <p style="font-size: 0.85rem; color: #666; margin-top: 10px; margin-bottom: 0;">
+            本社：〒264-0029 千葉県千葉市若葉区桜木北2-26-43
+        </p>
     </div>
 
     <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 40px;">
