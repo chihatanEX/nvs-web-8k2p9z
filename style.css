@@ -1,11 +1,10 @@
-/* --- Google Fontsの導入（モダンなフォント） --- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@300;500;700&display=swap');
 
 :root {
-    --primary-color: #ff8c00; /* アクセントのオレンジ */
-    --base-dark: #1a1a1a;    /* 締まった黒 */
-    --text-gray: #4a4a4a;    /* 読みやすいグレー */
-    --bg-light: #f9f9f9;     /* 柔らかな背景色 */
+    --primary-color: #ff8c00; 
+    --base-dark: #1a1a1a;
+    --text-gray: #4a4a4a;
+    --bg-light: #f9f9f9;
 }
 
 body {
@@ -17,10 +16,9 @@ body {
     line-height: 1.6;
 }
 
-/* --- ヘッダー：透過からスクロールで変化するイメージ --- */
 header {
     background: rgba(26, 26, 26, 0.95);
-    backdrop-filter: blur(10px); /* 背景をぼかすモダンな効果 */
+    backdrop-filter: blur(10px);
     color: white;
     position: fixed;
     top: 0;
@@ -33,27 +31,22 @@ header {
     padding: 0 5%;
     box-sizing: border-box;
 }
+.logo { 
+    display: flex;
+    align-items: baseline;
+    color: white;
+}
 
-/* ロゴ全体のスタイル */
-        .logo { 
-            display: flex;
-            align-items: baseline; /* これで下のラインが揃います */
-            color: white;
-        }
+.co-text {
+    font-size: 0.8rem;
+    font-weight: normal;
+    margin-right: 4px;
+}
 
-        /* 「株式会社」の部分 */
-        .co-text {
-            font-size: 0.8rem; /* 小さく設定 */
-            font-weight: normal;
-            margin-right: 4px; /* NVSとの隙間 */
-        }
-
-        /* 「NVS」の部分 */
-        .nvs-text {
-            font-size: 1.8rem; /* 大きく強調 */
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
+.nvs-text {
+    font-size: 1.8rem; 
+    letter-spacing: 2px;
+}
 
 .hero {
     position: relative;
@@ -105,7 +98,6 @@ header {
     color: var(--primary-color);
 }
 
-/* --- コンテンツレイアウト --- */
 .container {
     max-width: 1100px;
     margin: auto;
@@ -129,7 +121,7 @@ header {
     overflow: hidden;
 }
 
-.nav-card::after { /* ホバー時に下から線が出る演出 */
+.nav-card::after {
     content: "";
     position: absolute;
     bottom: 0; left: 0; width: 100%; height: 4px;
@@ -153,18 +145,16 @@ header {
     font-weight: 700;
 }
 
-/* --- アニメーションの定義 --- */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- レスポンシブ --- */
 @media (max-width: 768px) {
     .card-grid { grid-template-columns: 1fr; }
     .container { padding: 60px 20px; }
 }
-/* 求人カードのスタイル */
+
 .recruit-card {
     background: #fff;
     border: 1px solid #ddd;
@@ -197,8 +187,33 @@ header {
     font-weight: bold;
 }
 
-/* スマホでは縦並びに */
 @media (max-width: 768px) {
     .recruit-card { flex-direction: column; align-items: flex-start; }
     .btn-recruit { margin-top: 20px; width: 100%; text-align: center; box-sizing: border-box; }
+}
+
+.company-map {
+    width: 100%;
+    height: 400px;
+    margin-top: -60px;
+    margin-bottom: 80px;
+    border: 1px solid #eee;
+}
+
+.company-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    background: white; 
+    border: 1px solid #eee; 
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .company-map {
+        height: 300px;
+        margin-top: -30px;
+    }
+    .company-table {
+        margin-bottom: 30px;
+    }
 }

@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+
+    <meta name="robots" content="noindex,nofollow">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>株式会社NVS | 千葉の運送・物流プロフェッショナル</title>
     <style>
-        /* --- 基本設定 --- */
-        body { font-family: sans-serif; margin: 0; padding-top: 70px; background-color: #f9f9f9; color: #333; line-height: 1.6; }
-
-        /* --- ヘッダー --- */
+        body { font-family: sans-serif; margin: 0; padding-top: 76px; background-color: #f9f9f9; color: #333; line-height: 1.6; }
+        
         header {
             background: #1a1a1a; color: white; position: fixed;
             top: 0; width: 100%; height: 70px; z-index: 1000;
             display: flex; align-items: center; justify-content: center;
+            /* 黒枠の下に 2pxの白、その下に 4pxのオレンジ */
+            box-shadow: 0 2px 0 0 #fff, 0 6px 0 0 #ff8c00;
         }
+        
         .logo { 
             display: flex; 
             align-items: baseline; 
@@ -24,7 +28,6 @@
         .co-text { font-size: 1.0rem; margin-right: 5px; font-weight: normal; }
         .nvs-text { font-size: 1.8rem; font-weight: bold; }
 
-        /* --- ハンバーガーメニュー --- */
         #menu-check { display: none; }
         .menu-icon { position: absolute; right: 20px; cursor: pointer; z-index: 1200; width: 30px; }
         .menu-icon span { display: block; width: 100%; height: 3px; background: white; margin: 6px 0; transition: 0.3s; }
@@ -37,7 +40,6 @@
         .nav-menu li a:hover { background: #ff8c00; padding-left: 40px; }
         #menu-check:checked ~ .nav-menu { right: 0; }
 
-        /* --- メインビジュアル --- */
         .hero {
             position: relative; width: 100%; height: 500px;
             background: url('34209409_m.jpg') no-repeat center center / cover;
@@ -47,20 +49,18 @@
         .hero-content { position: relative; z-index: 1; padding: 0 20px; }
         .hero-content h2 { font-size: 2.5rem; font-weight: bold; margin: 0; line-height: 1.4; }
 
-        /* --- 画像の下の帯（運送の詳細に書き換え） --- */
         .hero-tag-full { width: 100%; background: #fff; border-bottom: 5px solid #ff8c00; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .hero-tag-box { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-around; align-items: center; padding: 25px 0; }
         .hero-tag-box div { flex: 1; text-align: center; font-weight: bold; font-size: 1.1rem; letter-spacing: 1px; color: #1a1a1a; }
         .hero-tag-box div:not(:last-child) { border-right: 1px solid #ddd; }
 
-        /* --- 事業理念（運送特化） --- */
-        .philosophy { background: #f4f4f4; padding: 100px 20px 60px; text-align: center; }
+        .philosophy { background: #f4f4f4; padding: 100px 20px 80px; text-align: center; }
         .philosophy-inner { max-width: 800px; margin: 0 auto; }
         .philosophy span { color: #ff8c00; font-weight: bold; letter-spacing: 2px; font-size: 0.9rem; }
         .philosophy h2 { font-size: 2rem; margin: 25px 0; letter-spacing: 2px; line-height: 1.5; }
-        .philosophy p { line-height: 2.2; color: #666; font-size: 1rem; text-align: center; }
+        .philosophy-text { text-align: justify; text-justify: inter-character; max-width: 650px; margin: 0 auto; }
+        .philosophy p { line-height: 2.2; color: #666; font-size: 1.05rem; margin: 0; display: inline-block; text-align: left; }
 
-        /* --- コンテンツエリア --- */
         .container { max-width: 900px; margin: auto; padding: 60px 20px; }
         .section-title { text-align: center; margin-bottom: 30px; }
         .section-title h2 { font-size: 1.8rem; letter-spacing: 4px; margin: 0; font-weight: bold; }
@@ -88,6 +88,8 @@
         .company-table th, .company-table td { padding: 20px; border-bottom: 1px solid #eee; text-align: left; }
         .company-table th { background: #fafafa; width: 30%; color: #666; font-size: 0.9rem; font-weight: bold; }
 
+        .company-map { width: 100%; height: 400px; margin-top: -60px; margin-bottom: 80px; border: 1px solid #eee; }
+
         footer { background: #1a1a1a; color: #888; text-align: center; padding: 40px 20px; font-size: 0.8rem; }
 
         @media (max-width: 768px) {
@@ -95,6 +97,9 @@
             .hero-tag-box { flex-direction: column; padding: 10px 0; }
             .hero-tag-box div { border-right: none !important; border-bottom: 1px solid #eee; padding: 15px 0; width: 100%; }
             .hero-tag-box div:last-child { border-bottom: none; }
+            .company-map { height: 300px; margin-top: -30px; }
+            .philosophy h2 { font-size: 1.5rem; }
+            .philosophy p { text-align: center; font-size: 0.95rem; }
         }
     </style>
 </head>
@@ -142,36 +147,6 @@
     </div>
 </section>
 
-<style>
-    /* 追加・修正するスタイル */
-    .philosophy { background: #f4f4f4; padding: 100px 20px 80px; text-align: center; }
-    .philosophy-inner { max-width: 800px; margin: 0 auto; }
-    .philosophy span { color: #ff8c00; font-weight: bold; letter-spacing: 2px; font-size: 0.9rem; }
-    .philosophy h2 { font-size: 2rem; margin: 25px 0; letter-spacing: 2px; line-height: 1.5; }
-    
-    /* 文章の流し込み設定を調整 */
-    .philosophy-text {
-        text-align: justify;    /* 両端揃えにして端を綺麗にする */
-        text-justify: inter-character;
-        max-width: 650px;       /* 読みやすい幅に制限 */
-        margin: 0 auto;         /* 中央に寄せる */
-    }
-    .philosophy p {
-        line-height: 2.2; 
-        color: #666; 
-        font-size: 1.05rem; 
-        margin: 0;
-        display: inline-block; /* 文の途中で変な改行を防ぐ */
-        text-align: left;      /* PCでは左詰め（全体は中央寄せ） */
-    }
-
-    /* スマホでは中央寄せに戻す（読みやすさ優先） */
-    @media (max-width: 768px) {
-        .philosophy h2 { font-size: 1.5rem; }
-        .philosophy p { text-align: center; font-size: 0.95rem; }
-    }
-</style>
-
 <main class="container">
     <div class="section-title"><h2>SERVICE</h2><div class="line"></div></div>
     <div style="text-align: center; margin-bottom: 20px; color: #666; font-size: 0.95rem;">
@@ -197,14 +172,27 @@
     <table class="company-table">
         <tr><th>会社名</th><td>株式会社NVS</td></tr>
         <tr><th>総裁</th><td>佐久間亮太</td></tr>
-        <tr><th>本部長</th><td>滝口</td></tr>
+        <tr><th>本部長</th><td>滝口卓弥</td></tr>
         <tr><th>法人番号</th><td>2040001135153</td></tr>
-        <tr><th>所在地</th><td>千葉県千葉市若葉区桜木北2-26-43</td></tr>
+        <tr><th>所在地</th><td>〒264-0017 千葉県千葉市若葉区桜木北2-26-43</td></tr>
+        <tr><th>加曽利営業所</th><td>〒264-0017 千葉県千葉市若葉区加曽利町475-19</td></tr>
         <tr><th>事業内容</th><td>一般貨物自動車運送業 / 引越事業 / 産業廃棄物収集運搬業</td></tr>
     </table>
+
+    <div class="company-map">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3243.670353457193!2d140.15878441235332!3d35.61125207249576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60228389332204c3%3A0x633d2894b9173663!2z44CSMjY0LTAwNDQg5Y2D6JGJ55yM5Y2D6JGJ5biC6Iul6JGJ5Yy65qGc5pyo5YyX77yS5LiB55uu77yS77yW4oiS77yU77yT!5e0!3m2!1sja!2sjp!4v1715830000000!5m2!1sja!2sjp" 
+            width="100%" 
+            height="80%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
 </main>
 
-<footer><p>&copy; 2026 株式会社NVS. All Rights Reserved.</p></footer>
+<footer><p>© 2026 株式会社NVS. All Rights Reserved.</p></footer>
 
 </body>
 </html>
